@@ -1,12 +1,3 @@
-/* =========================================
-   BITE & BALANCE - JAVASCRIPT
-========================================= */
-
-
-/* =========================================
-   1. OUR MEALS
-========================================= */
-
 const meals = [
     "Pizza",
     "Spaghetti Bolognese",
@@ -20,11 +11,6 @@ const meals = [
     "Cheesecake"
 ];
 
-
-/* =========================================
-   2. SEARCH FROM HOME PAGE
-========================================= */
-
 function searchMeal() {
 
     const searchInput =
@@ -32,63 +18,41 @@ function searchMeal() {
 
     const errorMessage =
         document.getElementById("errorMessage");
-
-
     if (!searchInput) {
         return;
     }
-
-
     const searchValue =
         searchInput.value.trim().toLowerCase();
-
-
     if (searchValue === "") {
 
         errorMessage.textContent =
             "Please enter a meal name.";
-
         return;
     }
-
-
     const foundMeal = meals.find(meal =>
         meal.toLowerCase().includes(searchValue)
     );
-
-
     if (foundMeal) {
 
         window.location.href =
             "results.html?search=" +
             encodeURIComponent(searchValue);
-
     } else {
-
         errorMessage.textContent =
             "Sorry, this meal is not available.";
-
     }
 
 }
 
 
-/* =========================================
-   3. ENTER KEY FOR SEARCH
-========================================= */
-
 const mealSearchInput =
     document.getElementById("mealSearch");
-
-
 if (mealSearchInput) {
-
     mealSearchInput.addEventListener(
         "keypress",
         function(event) {
 
             if (event.key === "Enter") {
-
                 searchMeal();
 
             }
@@ -98,21 +62,14 @@ if (mealSearchInput) {
 
 }
 
-
-/* =========================================
-   4. RESULTS PAGE
-========================================= */
-
 const urlParams =
     new URLSearchParams(window.location.search);
 
 const searchedMeal =
     urlParams.get("search");
 
-
 const resultText =
     document.getElementById("searchResultText");
-
 
 if (resultText && searchedMeal) {
 
@@ -123,25 +80,18 @@ if (resultText && searchedMeal) {
 }
 
 
-/* =========================================
-   5. FILTER THE 10 MEALS
-========================================= */
-
 const mealCards =
     document.querySelectorAll(".meal-card");
-
 
 if (mealCards.length > 0 && searchedMeal) {
 
     const searchText =
         searchedMeal.toLowerCase();
 
-
     mealCards.forEach(card => {
 
         const mealName =
             card.dataset.name.toLowerCase();
-
 
         if (mealName.includes(searchText)) {
 
@@ -158,27 +108,12 @@ if (mealCards.length > 0 && searchedMeal) {
 }
 
 
-/* =========================================
-   6. OPEN SELECTED MEAL
-========================================= */
-
 function openMeal(mealName) {
-
-    /*
-       Save the selected meal
-       so meal.html knows which meal
-       the user selected.
-    */
 
     localStorage.setItem(
         "selectedMeal",
         mealName
     );
-
-
-    /*
-       Go to the meal details page.
-    */
 
     window.location.href =
         "meal.html";
@@ -186,18 +121,8 @@ function openMeal(mealName) {
 }
 
 
-/* =========================================
-   7. THEMEALDB API
-========================================= */
-
-/*
-   TheMealDB API
-   This is where we get the recipe.
-*/
-
 const THEMEALDB_API =
     "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-
 
 async function getRecipe(mealName) {
 
@@ -231,20 +156,12 @@ async function getRecipe(mealName) {
 }
 
 
-/* =========================================
-   8. DISPLAY MEAL FROM THEMEALDB
-========================================= */
-
 async function displayMeal() {
 
     const mealContent =
         document.getElementById("mealContent");
 
 
-    /*
-       Only run this function
-       on meal.html
-    */
 
     if (!mealContent) {
 
@@ -270,18 +187,10 @@ async function displayMeal() {
     }
 
 
-    /*
-       Show loading message
-    */
-
     mealContent.innerHTML = `
         <p>Loading recipe...</p>
     `;
 
-
-    /*
-       Get recipe from TheMealDB
-    */
 
     const meals =
         await getRecipe(mealName);
@@ -300,17 +209,8 @@ async function displayMeal() {
     }
 
 
-    /*
-       Get the first matching recipe
-    */
-
     const meal =
         meals[0];
-
-
-    /*
-       Display the recipe information
-    */
 
     mealContent.innerHTML = `
 
@@ -382,10 +282,6 @@ async function displayMeal() {
     `;
 
 
-    /*
-       Save the recipe information
-       for the Recipe button.
-    */
 
     localStorage.setItem(
         "currentRecipe",
@@ -394,10 +290,6 @@ async function displayMeal() {
 
 }
 
-
-/* =========================================
-   9. SHOW RECIPE
-========================================= */
 
 function showRecipe() {
 
@@ -448,18 +340,6 @@ function showRecipe() {
 }
 
 
-/* =========================================
-   10. FOODDATA CENTRAL API
-========================================= */
-
-/*
-   WE WILL CONNECT FOODDATA CENTRAL HERE.
-
-   Later we will replace YOUR_API_KEY
-   with your real API key.
-*/
-
-
 const FOODDATA_API =
     "https://api.nal.usda.gov/fdc/v1/foods/search";
 
@@ -470,10 +350,6 @@ const FOODDATA_API_KEY =
 
 async function getNutrition(foodName) {
 
-    /*
-       This function will search
-       FoodData Central for the meal.
-    */
 
     try {
 
@@ -509,10 +385,6 @@ async function getNutrition(foodName) {
 
 }
 
-
-/* =========================================
-   11. DISPLAY NUTRITION
-========================================= */
 
 async function displayNutrition() {
 
@@ -565,11 +437,6 @@ async function displayNutrition() {
 
     }
 
-
-    /*
-       We will choose the first
-       suitable FoodData Central result.
-    */
 
     const food =
         foods[0];
@@ -627,9 +494,6 @@ async function displayNutrition() {
 }
 
 
-/* =========================================
-   12. GET NUTRIENT VALUE
-========================================= */
 
 function getNutrient(food, nutrientName) {
 
@@ -659,9 +523,6 @@ function getNutrient(food, nutrientName) {
 }
 
 
-/* =========================================
-   13. NUTRITION BUTTON
-========================================= */
 
 function getNutrition() {
 
@@ -669,9 +530,5 @@ function getNutrition() {
 
 }
 
-
-/* =========================================
-   14. START MEAL PAGE
-========================================= */
 
 displayMeal();

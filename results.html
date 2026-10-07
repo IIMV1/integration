@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bite&Balance - Meals</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            Bite<span>&</span>Balance
+        </div>
+
+        <a href="index.html" class="home-link">
+            Home
+        </a>
+
+    </header>
+
+
+    <main class="results-container">
+
+        <div class="results-header">
+
+            <p class="small-title">
+                BITE & BALANCE
+            </p>
+
+            <h1>
+                Explore our meals
+            </h1>
+
+            <p id="searchResultText">
+                Delicious meals waiting for you.
+            </p>
+
+        </div>
+
+
+        <div id="mealsContainer" class="meals-grid">
+
+
+            <!-- Pizza -->
+
+            <div class="meal-card" data-name="pizza">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\pizza.jpg" alt="Pizza">
+
+                <div class="meal-info">
+
+                    <h2>Pizza</h2>
+
+                    <p>
+                        A delicious classic meal.
+                    </p>
+
+                    <button onclick="openMeal('Pizza')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Spaghetti -->
+
+            <div class="meal-card" data-name="spaghetti bolognese">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\spaghetti.jpg" alt="Spaghetti Bolognese">
+
+                <div class="meal-info">
+
+                    <h2>Spaghetti Bolognese</h2>
+
+                    <p>
+                        Italian pasta with rich sauce.
+                    </p>
+
+                    <button onclick="openMeal('Spaghetti Bolognese')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Fettuccine Alfredo -->
+
+            <div class="meal-card" data-name="fettuccine alfredo alfredo">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\fettuccine.jpg" alt="Fettuccine Alfredo">
+
+                <div class="meal-info">
+
+                    <h2>Fettuccine Alfredo</h2>
+
+                    <p>
+                        Creamy and comforting pasta.
+                    </p>
+
+                    <button onclick="openMeal('Fettuccine Alfredo')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Burger -->
+
+            <div class="meal-card" data-name="beef burger burger">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\burger.jpg" alt="Beef Burger">
+
+                <div class="meal-info">
+
+                    <h2>Beef Burger</h2>
+
+                    <p>
+                        A classic juicy burger.
+                    </p>
+
+                    <button onclick="openMeal('Beef Burger')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Chicken Alfredo -->
+
+            <div class="meal-card" data-name="chicken alfredo">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\chicken alfredo.jpg" alt="Chicken Alfredo">
+
+                <div class="meal-info">
+
+                    <h2>Chicken Alfredo</h2>
+
+                    <p>
+                        Creamy chicken pasta.
+                    </p>
+
+                    <button onclick="openMeal('Chicken Alfredo')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Chicken Curry -->
+
+            <div class="meal-card" data-name="chicken curry curry">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\chicken curry.jpg" alt="Chicken Curry">
+
+                <div class="meal-info">
+
+                    <h2>Chicken Curry</h2>
+
+                    <p>
+                        Flavorful chicken with curry.
+                    </p>
+
+                    <button onclick="openMeal('Chicken Curry')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tacos -->
+
+            <div class="meal-card" data-name="tacos taco">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\taco.jpg" alt="Tacos">
+
+                <div class="meal-info">
+
+                    <h2>Tacos</h2>
+
+                    <p>
+                        A delicious Mexican favorite.
+                    </p>
+
+                    <button onclick="openMeal('Tacos')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pancakes -->
+
+            <div class="meal-card" data-name="pancakes pancake">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\pancake.jpg" alt="Pancakes">
+
+                <div class="meal-info">
+
+                    <h2>Pancakes</h2>
+
+                    <p>
+                        Soft and fluffy pancakes.
+                    </p>
+
+                    <button onclick="openMeal('Pancakes')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cookies -->
+
+            <div class="meal-card" data-name="chocolate chip cookies cookies">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\cookies.jpg" alt="Chocolate Chip Cookies">
+
+                <div class="meal-info">
+
+                    <h2>Chocolate Chip Cookies</h2>
+
+                    <p>
+                        Sweet cookies with chocolate chips.
+                    </p>
+
+                    <button onclick="openMeal('Chocolate Chip Cookies')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cheesecake -->
+
+            <div class="meal-card" data-name="cheesecake">
+
+                <img src="C:\Users\moune\OneDrive\سطح المكتب\integration\imgs\cheesecake.jpg" alt="Cheesecake">
+
+                <div class="meal-info">
+
+                    <h2>Cheesecake</h2>
+
+                    <p>
+                        A creamy and delicious dessert.
+                    </p>
+
+                    <button onclick="openMeal('Cheesecake')">
+                        View Meal
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

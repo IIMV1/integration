@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bite&Balance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Bite<span>&</span>Balance</div>
+    </header>
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">DISCOVER • COOK • ENJOY</p>
+
+            <h1>
+                Find your next<br>
+                <span>delicious bite.</span>
+            </h1>
+
+            <p class="description">
+                Discover delicious meals, explore recipes,
+                and learn about their nutritional value.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="mealSearch"
+                    placeholder="Search for a meal..."
+                >
+
+                <button onclick="searchMeal()">
+                    Search
+                </button>
+
+            </div>
+
+            <p id="errorMessage" class="error-message"></p>
+
+        </div>
+
+        <div class="hero-decoration">
+            <div class="circle"></div>
+            <div class="food-symbol">🍴</div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

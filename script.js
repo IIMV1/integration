@@ -345,7 +345,7 @@ const FOODDATA_API =
 
 
 const FOODDATA_API_KEY =
-    "YOUR_API_KEY";
+    "q9xZEwgSYYWIEyoJOnqbpKdc06vZcvtW9BaXMwbK";
 
 
 async function getNutrition(foodName) {
